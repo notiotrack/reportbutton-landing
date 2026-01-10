@@ -1,0 +1,495 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import '../styles/global.css';
+import '../i18n/i18n';
+---
+
+<Layout title="ReportButton - Peace of mind in managing reports">
+	<LanguageSwitcher />
+	<main
+		id="main-content"
+		class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-white text-white cursor-glow"
+		style="--mouse-x: 50%; --mouse-y: 50%;"
+	>
+		<!-- Hero Section -->
+		<section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+			<!-- Animated background elements -->
+			<div class="absolute inset-0 overflow-hidden">
+				<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+				<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+			</div>
+
+			<div class="relative z-10 max-w-7xl mx-auto text-center">
+				<!-- Badge -->
+				<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-8 animate-fade-in">
+					<span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+					<span class="text-sm text-slate-300" data-i18n="badge.comingSoon">Coming soon</span>
+				</div>
+
+				<h1 class="text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent animate-fade-in-up">
+					ReportButton
+				</h1>
+
+				<p class="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-4 max-w-3xl mx-auto animate-fade-in-up delay-200" data-i18n="hero.tagline">
+					Peace. Order. Professionalism.
+				</p>
+
+				<p class="text-lg sm:text-xl text-slate-400 mb-12 max-w-2xl mx-auto animate-fade-in-up delay-300" data-i18n="hero.description">
+					Simple tool for managing content reports. Take the email chaos off your mind and focus on what matters.
+				</p>
+
+				<!-- Waitlist Form -->
+				<div class="max-w-md mx-auto animate-fade-in-up delay-400">
+					<form class="flex flex-col sm:flex-row gap-3">
+						<input
+							type="email"
+							data-i18n-placeholder="hero.emailPlaceholder"
+							placeholder="Your email"
+							class="flex-1 px-6 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+						/>
+						<button
+							type="submit"
+							class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer"
+							data-i18n="hero.joinWaitlist"
+						>
+							Join the waitlist
+						</button>
+					</form>
+					<p class="text-sm text-slate-500 mt-4" data-i18n="hero.waitlistSubtext">Be the first to know when we're ready</p>
+				</div>
+			</div>
+
+			<!-- Scroll indicator -->
+			<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+				<svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+				</svg>
+			</div>
+		</section>
+
+		<!-- Problem Section -->
+		<section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl sm:text-5xl font-bold mb-4" data-i18n="problem.title">Running a website comes with responsibility</h2>
+					<p class="text-xl text-slate-300 max-w-3xl mx-auto" data-i18n="problem.subtitle">You're responsible for what appears on your site. Unwanted content can surface anywhere—and it's your job to handle it properly.</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-8 mb-12">
+					<div class="p-8 bg-white/5 backdrop-blur-sm border border-white/10">
+						<div class="text-5xl mb-4">🌐</div>
+						<h3 class="text-2xl font-semibold mb-4" data-i18n="problem.contentAnywhere.title">Content can appear anywhere</h3>
+						<ul class="space-y-3 text-slate-300">
+							<li class="flex items-start gap-2">
+								<span class="text-blue-400 mt-1">•</span>
+								<span data-i18n="problem.contentAnywhere.items.0">User comments and discussions</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-blue-400 mt-1">•</span>
+								<span data-i18n="problem.contentAnywhere.items.1">Product reviews and ratings</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-blue-400 mt-1">•</span>
+								<span data-i18n="problem.contentAnywhere.items.2">Uploaded files and media</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-blue-400 mt-1">•</span>
+								<span data-i18n="problem.contentAnywhere.items.3">User-generated content</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-blue-400 mt-1">•</span>
+								<span data-i18n="problem.contentAnywhere.items.4">And countless other ways</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="p-8 bg-white/5 backdrop-blur-sm border border-white/10">
+						<div class="text-5xl mb-4">⚠️</div>
+						<h3 class="text-2xl font-semibold mb-4" data-i18n="problem.problematicContent.title">Types of problematic content</h3>
+						<ul class="space-y-3 text-slate-300">
+							<li class="flex items-start gap-2">
+								<span class="text-red-400 mt-1">•</span>
+								<span data-i18n="problem.problematicContent.items.0">Hate speech and discrimination</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-red-400 mt-1">•</span>
+								<span data-i18n="problem.problematicContent.items.1">Links to illegal resources</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-red-400 mt-1">•</span>
+								<span data-i18n="problem.problematicContent.items.2">Copyright violations</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-red-400 mt-1">•</span>
+								<span data-i18n="problem.problematicContent.items.3">Harassment and cyberbullying</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-red-400 mt-1">•</span>
+								<span data-i18n="problem.problematicContent.items.4">Misinformation and fake news</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-red-400 mt-1">•</span>
+								<span data-i18n="problem.problematicContent.items.5">Extreme graphic or illegal imagery</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-8 md:p-12 border border-white/10 backdrop-blur-sm">
+					<div class="max-w-4xl mx-auto">
+						<div class="flex items-start gap-4 mb-6">
+							<div class="text-4xl">⚖️</div>
+							<div>
+								<h3 class="text-2xl md:text-3xl font-bold mb-4" data-i18n="problem.dsa.title">DSA requires you to take action</h3>
+								<p class="text-lg text-slate-200 mb-6" data-i18n="problem.dsa.description">
+									The Digital Services Act (DSA) requires website owners to maintain order and handle problematic content. You need clear procedures that allow visitors to report such content directly to you.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-slate-900/50 p-6 border border-red-500/30 mb-6">
+							<div class="flex items-start gap-3">
+								<div class="text-2xl">🚨</div>
+								<div>
+									<h4 class="font-semibold text-lg mb-2 text-red-300" data-i18n="problem.dsa.withoutProcedures.title">Without proper procedures</h4>
+									<p class="text-slate-300" data-i18n="problem.dsa.withoutProcedures.description">
+										If you don't have a reporting system in place, reports may come through official channels—from prosecutors, law enforcement, or regulatory bodies across EU member states. This means formal investigations, legal complications, and unnecessary stress.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg-gradient-to-r from-green-600/20 to-blue-600/20 p-6 border border-green-500/30">
+							<div class="flex items-start gap-3">
+								<div class="text-2xl">✨</div>
+								<div>
+									<h4 class="font-semibold text-lg mb-2 text-green-300" data-i18n="problem.dsa.withReportButton.title">With ReportButton</h4>
+									<p class="text-slate-200 text-lg" data-i18n="problem.dsa.withReportButton.description">
+										Set up a professional reporting system in minutes. Visitors can report issues directly to you, you maintain full control, and everything stays organized. No more complications—just peace of mind.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Solution Section -->
+		<section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-800 to-slate-700">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl sm:text-5xl font-bold mb-4" data-i18n="solution.title">ReportButton is your peace of mind</h2>
+					<p class="text-xl text-slate-200" data-i18n="solution.subtitle">Everything in one place. Zero chaos. Full control.</p>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+					<div>
+						<div class="space-y-6">
+							<div class="flex gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl">
+									✓
+								</div>
+								<div>
+									<h3 class="text-xl font-semibold mb-2" data-i18n="solution.features.oneDashboard.title">One dashboard, all reports</h3>
+									<p class="text-slate-300" data-i18n="solution.features.oneDashboard.description">No more searching through your inbox. Everything in a clear dashboard.</p>
+								</div>
+							</div>
+
+							<div class="flex gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl">
+									✓
+								</div>
+								<div>
+									<h3 class="text-xl font-semibold mb-2" data-i18n="solution.features.automated.title">Automated communication</h3>
+									<p class="text-slate-300" data-i18n="solution.features.automated.description">The system sends confirmations automatically. You just manage.</p>
+								</div>
+							</div>
+
+							<div class="flex gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl">
+									✓
+								</div>
+								<div>
+									<h3 class="text-xl font-semibold mb-2" data-i18n="solution.features.professional.title">Professional widget</h3>
+									<p class="text-slate-300" data-i18n="solution.features.professional.description">Elegant button on your site. Multilingual. Responsive.</p>
+								</div>
+							</div>
+
+							<div class="flex gap-4">
+								<div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl">
+									✓
+								</div>
+								<div>
+									<h3 class="text-xl font-semibold mb-2" data-i18n="solution.features.fiveMinutes.title">5 minutes to start</h3>
+									<p class="text-slate-300" data-i18n="solution.features.fiveMinutes.description">Paste the code, done. No complicated installations.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="relative">
+						<div class="aspect-video bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10 overflow-hidden backdrop-blur-sm">
+							<img
+								src="/screenshot.webp"
+								alt="Dashboard Preview"
+								class="w-full h-full object-cover border-2 border-slate-900 shadow-xl shadow-yellow-500/30"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-700 to-slate-600">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl sm:text-5xl font-bold mb-4 text-white" data-i18n="features.title">What you get?</h2>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+						<div class="text-5xl mb-4">🎯</div>
+						<h3 class="text-2xl font-bold mb-3" data-i18n="features.items.peaceOfMind.title">Peace of mind</h3>
+						<p class="text-slate-200" data-i18n="features.items.peaceOfMind.description">Confidence that you're in control. Nothing slips through the cracks.</p>
+					</div>
+
+					<div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+						<div class="text-5xl mb-4">⚡</div>
+						<h3 class="text-2xl font-bold mb-3" data-i18n="features.items.timeSavings.title">Time savings</h3>
+						<p class="text-slate-200" data-i18n="features.items.timeSavings.description">No more manual responses. Automation handles communication.</p>
+					</div>
+
+					<div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+						<div class="text-5xl mb-4">💼</div>
+						<h3 class="text-2xl font-bold mb-3" data-i18n="features.items.professionalism.title">Professionalism</h3>
+						<p class="text-slate-200" data-i18n="features.items.professionalism.description">Your site looks serious. Users see their voice matters.</p>
+					</div>
+
+					<div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+						<div class="text-5xl mb-4">📈</div>
+						<h3 class="text-2xl font-bold mb-3" data-i18n="features.items.fullControl.title">Full control</h3>
+						<p class="text-slate-200" data-i18n="features.items.fullControl.description">Statuses, filters, history. Everything at your fingertips.</p>
+					</div>
+
+					<div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+						<div class="text-5xl mb-4">🌍</div>
+						<h3 class="text-2xl font-bold mb-3" data-i18n="features.items.multilingual.title">Multilingual</h3>
+						<p class="text-slate-200" data-i18n="features.items.multilingual.description">EN, DE, FR, ES, PL. Support users from around the world.</p>
+					</div>
+
+					<div class="bg-white/10 backdrop-blur-sm p-8 border border-white/20">
+						<div class="text-5xl mb-4">🔒</div>
+						<h3 class="text-2xl font-bold mb-3" data-i18n="features.items.security.title">Security</h3>
+						<p class="text-slate-200" data-i18n="features.items.security.description">Spam protection. Data isolation. Professional infrastructure.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- How it works -->
+		<section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-600 to-slate-500">
+			<div class="max-w-6xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl sm:text-5xl font-bold mb-4 text-white" data-i18n="howItWorks.title">How it works?</h2>
+					<p class="text-xl text-slate-100" data-i18n="howItWorks.subtitle">Simple. Fast. No complications.</p>
+				</div>
+
+				<div class="grid md:grid-cols-4 gap-8">
+					<div class="text-center">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+							1
+						</div>
+						<h3 class="text-xl font-semibold mb-2 text-white" data-i18n="howItWorks.steps.createAccount.title">Create account</h3>
+						<p class="text-slate-200" data-i18n="howItWorks.steps.createAccount.description">Sign up in a minute</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+							2
+						</div>
+						<h3 class="text-xl font-semibold mb-2 text-white" data-i18n="howItWorks.steps.addSite.title">Add your site</h3>
+						<p class="text-slate-200" data-i18n="howItWorks.steps.addSite.description">Each domain gets its key</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+							3
+						</div>
+						<h3 class="text-xl font-semibold mb-2 text-white" data-i18n="howItWorks.steps.pasteCode.title">Paste code</h3>
+						<p class="text-slate-200" data-i18n="howItWorks.steps.pasteCode.description">A few lines, done</p>
+					</div>
+
+					<div class="text-center">
+						<div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+							4
+						</div>
+						<h3 class="text-xl font-semibold mb-2 text-white" data-i18n="howItWorks.steps.enjoy.title">Enjoy peace of mind</h3>
+						<p class="text-slate-200" data-i18n="howItWorks.steps.enjoy.description">Manage in a convenient dashboard</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-500 to-white">
+			<div class="max-w-4xl mx-auto text-center">
+				<h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-slate-900" data-i18n="cta.title">
+					Ready for peace of mind?
+				</h2>
+				<p class="text-xl sm:text-2xl text-slate-600 mb-12" data-i18n="cta.subtitle">
+					Join the waitlist and be the first when we're ready
+				</p>
+
+				<div class="max-w-md mx-auto">
+					<form class="flex flex-col sm:flex-row gap-3">
+						<input
+							type="email"
+							data-i18n-placeholder="cta.emailPlaceholder"
+							placeholder="Your email"
+							class="flex-1 px-6 py-4 bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-lg"
+						/>
+						<button
+							type="submit"
+							class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer"
+							data-i18n="cta.joinWaitlist"
+						>
+							Join the waitlist
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-white py-12 px-4 sm:px-6 lg:px-8">
+			<div class="max-w-6xl mx-auto text-center">
+				<h3 class="text-2xl font-bold text-slate-900 mb-2">ReportButton</h3>
+				<p class="text-slate-600 mb-6" data-i18n="footer.tagline">Your peace of mind in managing reports</p>
+				<p class="text-sm text-slate-400" data-i18n="footer.copyright">© 2026 ReportButton. All rights reserved.</p>
+			</div>
+		</footer>
+	</main>
+</Layout>
+
+<style>
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fade-in-up {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-fade-in {
+		animation: fade-in 0.6s ease-out;
+	}
+
+	.animate-fade-in-up {
+		animation: fade-in-up 0.8s ease-out;
+	}
+
+	.delay-200 {
+		animation-delay: 0.2s;
+		animation-fill-mode: both;
+	}
+
+	.delay-300 {
+		animation-delay: 0.3s;
+		animation-fill-mode: both;
+	}
+
+	.delay-400 {
+		animation-delay: 0.4s;
+		animation-fill-mode: both;
+	}
+
+	.delay-1000 {
+		animation-delay: 1s;
+	}
+
+	/* Cursor glow effect */
+	.cursor-glow {
+		position: relative;
+	}
+
+	.cursor-glow::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 1;
+		background: radial-gradient(
+			circle 500px at var(--mouse-x) var(--mouse-y),
+			rgba(255, 255, 255, 0.2) 0%,
+			rgba(255, 255, 255, 0.1) 25%,
+			rgba(255, 255, 255, 0.05) 45%,
+			rgba(255, 255, 255, 0.02) 60%,
+			transparent 75%
+		);
+		opacity: 0;
+		transition: opacity 0.2s ease-out;
+	}
+
+	.cursor-glow.cursor-moving::before,
+	.cursor-glow:hover::before {
+		opacity: 1;
+	}
+
+	/* Ensure content is above the glow effect */
+	.cursor-glow > * {
+		position: relative;
+		z-index: 2;
+	}
+</style>
+
+<script>
+	// Track mouse position for cursor glow effect
+	const main = document.getElementById('main-content');
+	if (main) {
+		let isMoving = false;
+
+		const updateMousePosition = (e) => {
+			const mouseX = e.clientX;
+			const mouseY = e.clientY;
+
+			main.style.setProperty('--mouse-x', `${mouseX}px`);
+			main.style.setProperty('--mouse-y', `${mouseY}px`);
+
+			if (!isMoving) {
+				isMoving = true;
+				main.classList.add('cursor-moving');
+			}
+		};
+
+		const handleMouseLeave = () => {
+			isMoving = false;
+			main.classList.remove('cursor-moving');
+		};
+
+		main.addEventListener('mousemove', updateMousePosition);
+		main.addEventListener('mouseleave', handleMouseLeave);
+
+		// Initialize position on load
+		main.addEventListener('mouseenter', (e) => {
+			updateMousePosition(e);
+		});
+	}
+</script>
