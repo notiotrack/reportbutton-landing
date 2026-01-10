@@ -130,7 +130,7 @@ export const translations: Record<Language, Translations> = {
 		hero: {
 			title: 'ReportButton',
 			tagline: 'Peace. Order. Professionalism.',
-			description: 'Simple tool for managing content reports. Take the email chaos off your mind and focus on what matters.',
+			description: 'Professional content moderation system. Keep your site safe, maintain order, and protect your community from harmful content.',
 			emailPlaceholder: 'Your email',
 			joinWaitlist: 'Join the waitlist',
 			waitlistSubtext: "Be the first to know when we're ready",
@@ -264,7 +264,7 @@ export const translations: Record<Language, Translations> = {
 		hero: {
 			title: 'ReportButton',
 			tagline: 'Spokój. Porządek. Profesjonalizm.',
-			description: 'Proste narzędzie do zarządzania zgłoszeniami treści. Zdejmij z głowy chaos emaili i skup się na tym, co ważne.',
+			description: 'Profesjonalny system moderacji treści. Utrzymaj bezpieczeństwo swojej strony, zachowaj porządek i chroń społeczność przed szkodliwymi treściami.',
 			emailPlaceholder: 'Twój email',
 			joinWaitlist: 'Dołącz do listy oczekujących',
 			waitlistSubtext: 'Bądź pierwszy, gdy będziemy gotowi',
