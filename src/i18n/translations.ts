@@ -12,6 +12,13 @@ export interface Translations {
 		joinWaitlist: string;
 		waitlistSubtext: string;
 	};
+	quotes: {
+		items: {
+			text: string;
+			author: string;
+			source: string;
+		}[];
+	};
 	problem: {
 		title: string;
 		subtitle: string;
@@ -113,8 +120,15 @@ export interface Translations {
 	cta: {
 		title: string;
 		subtitle: string;
+		discount: string;
 		emailPlaceholder: string;
 		joinWaitlist: string;
+	};
+	integration: {
+		title: string;
+		subtitle: string;
+		description: string;
+		cmsList: string[];
 	};
 	footer: {
 		tagline: string;
@@ -134,6 +148,25 @@ export const translations: Record<Language, Translations> = {
 			emailPlaceholder: 'Your email',
 			joinWaitlist: 'Join the waitlist',
 			waitlistSubtext: "Be the first to know when we're ready",
+		},
+		quotes: {
+			items: [
+				{
+					text: 'The DSA makes this a duty, not a choice.',
+					author: 'EU executive vice-president Henna Virkkunen',
+					source: 'AP News',
+				},
+				{
+					text: 'The fine costs X much more than it would have if they had complied with the rules.',
+					author: '',
+					source: 'Le Monde',
+				},
+				{
+					text: 'The Digital Services Act helps to make the online environment safe and trustworthy.',
+					author: '',
+					source: 'Digital Services Act Strategy',
+				},
+			],
 		},
 		problem: {
 			title: 'Running a website comes with responsibility',
@@ -190,7 +223,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				fiveMinutes: {
 					title: '5 minutes to start',
-					description: 'Paste the code, done. No complicated installations.',
+					description: 'Works with any CMS—WordPress, Shopify, Webflow, or any website. Just paste one script and you are done. No complicated installations.',
 				},
 			},
 			dashboardPreview: 'Dashboard Preview',
@@ -249,8 +282,15 @@ export const translations: Record<Language, Translations> = {
 		cta: {
 			title: 'Ready for peace of mind?',
 			subtitle: "Join the waitlist and be the first when we're ready",
+			discount: 'Sign up now to get 50% off for the first 6 months after launch',
 			emailPlaceholder: 'Your email',
 			joinWaitlist: 'Join the waitlist',
+		},
+		integration: {
+			title: 'Works with any platform',
+			subtitle: 'Universal integration',
+			description: 'ReportButton works with any CMS or website platform. Just paste one script and you are done.',
+			cmsList: ['WordPress', 'Shopify', 'Webflow', 'Custom HTML', 'Any CMS'],
 		},
 		footer: {
 			tagline: 'Your peace of mind in managing reports',
@@ -268,6 +308,25 @@ export const translations: Record<Language, Translations> = {
 			emailPlaceholder: 'Twój email',
 			joinWaitlist: 'Dołącz do listy oczekujących',
 			waitlistSubtext: 'Bądź pierwszy, gdy będziemy gotowi',
+		},
+		quotes: {
+			items: [
+				{
+					text: 'DSA czyni to obowiązkiem, a nie wyborem.',
+					author: 'Wiceprzewodnicząca wykonawcza UE Henna Virkkunen',
+					source: 'AP News',
+				},
+				{
+					text: 'Kara kosztuje X znacznie więcej, niż gdyby przestrzegali zasad.',
+					author: '',
+					source: 'Le Monde',
+				},
+				{
+					text: 'Digital Services Act pomaga uczynić środowisko online bezpiecznym i godnym zaufania.',
+					author: '',
+					source: 'Digital Services Act Strategy',
+				},
+			],
 		},
 		problem: {
 			title: 'Prowadzenie strony wiąże się z odpowiedzialnością',
@@ -324,7 +383,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				fiveMinutes: {
 					title: '5 minut do startu',
-					description: 'Wklej kod, gotowe. Bez skomplikowanych instalacji.',
+					description: 'Działa z każdym CMS-em—WordPress, Shopify, Webflow lub dowolną stroną. Wystarczy wkleić jeden skrypt i gotowe. Bez skomplikowanych instalacji.',
 				},
 			},
 			dashboardPreview: 'Podgląd Dashboard',
@@ -383,8 +442,15 @@ export const translations: Record<Language, Translations> = {
 		cta: {
 			title: 'Gotowy na spokój?',
 			subtitle: 'Dołącz do listy oczekujących i bądź pierwszy, gdy będziemy gotowi',
+			discount: 'Zapisz się teraz, aby otrzymać 50% zniżki na pierwsze 6 miesięcy po premierze',
 			emailPlaceholder: 'Twój email',
 			joinWaitlist: 'Dołącz do listy oczekujących',
+		},
+		integration: {
+			title: 'Działa z każdą platformą',
+			subtitle: 'Uniwersalna integracja',
+			description: 'ReportButton działa z każdym CMS-em lub platformą. Wystarczy wkleić jeden skrypt i gotowe.',
+			cmsList: ['WordPress', 'Shopify', 'Webflow', 'Własny HTML', 'Dowolny CMS'],
 		},
 		footer: {
 			tagline: 'Twój spokój w zarządzaniu zgłoszeniami',
