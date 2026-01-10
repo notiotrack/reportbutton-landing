@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import '../styles/global.css';
 import '../i18n/i18n';
+
+const baseUrl = import.meta.env.BASE_URL;
+const screenshotUrl = `${baseUrl}screenshot.webp`;
 ---
 
 <Layout title="ReportButton - Peace of mind in managing reports">
@@ -298,7 +301,7 @@ import '../i18n/i18n';
 					<div class="relative">
 						<div class="aspect-video bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10 overflow-hidden backdrop-blur-sm">
 							<img
-								src="/screenshot.webp"
+								src={screenshotUrl}
 								alt="Dashboard Preview"
 								class="w-full h-full object-cover border-2 border-slate-900 shadow-xl shadow-yellow-500/30"
 							/>
