@@ -130,6 +130,13 @@ export interface Translations {
 		description: string;
 		cmsList: string[];
 	};
+	faq: {
+		title: string;
+		items: {
+			question: string;
+			answer: string;
+		}[];
+	};
 	footer: {
 		tagline: string;
 		copyright: string;
@@ -292,6 +299,31 @@ export const translations: Record<Language, Translations> = {
 			description: 'ReportButton works with any CMS or website platform. Just paste one script and you are done.',
 			cmsList: ['WordPress', 'Shopify', 'Webflow', 'Custom HTML', 'Any CMS'],
 		},
+		faq: {
+			title: 'Frequently Asked Questions',
+			items: [
+				{
+					question: 'Do I need to comply with DSA?',
+					answer: 'Yes, if user-generated content appears on your site—even just comments—you need to comply with DSA. If your site has multiple editors, ReportButton helps you manage content moderation efficiently.',
+				},
+				{
+					question: 'Will I be able to install the system?',
+					answer: 'Absolutely. Installation is as simple as adding one line of code to your website. We also provide ready-made modules for popular CMS and e-commerce platforms.',
+				},
+				{
+					question: 'What happens if I do not integrate ReportButton?',
+					answer: 'You can still implement full content moderation support on your own, but this SaaS solution takes the entire task off your shoulders and shortens the process from weeks to just a few minutes.',
+				},
+				{
+					question: 'What happens if I do not implement moderation procedures under DSA?',
+					answer: 'You can hope for luck that nothing bad will ever happen on your site. However, if illegal content appears and visitors do not have a way to report it to the site owner, they can report it directly to prosecutors or law enforcement. This means the start of formal procedures.',
+				},
+				{
+					question: 'Does DSA only apply to large sites like Facebook, Instagram, or X?',
+					answer: 'DSA was created with the problems these services and their users create in mind, but it applies to all websites, stores, and online services.',
+				},
+			],
+		},
 		footer: {
 			tagline: 'Your peace of mind in managing reports',
 			copyright: '© 2026 ReportButton. All rights reserved.',
@@ -451,6 +483,31 @@ export const translations: Record<Language, Translations> = {
 			subtitle: 'Uniwersalna integracja',
 			description: 'ReportButton działa z każdym CMS-em lub platformą. Wystarczy wkleić jeden skrypt i gotowe.',
 			cmsList: ['WordPress', 'Shopify', 'Webflow', 'Własny HTML', 'Dowolny CMS'],
+		},
+		faq: {
+			title: 'Najczęściej zadawane pytania',
+			items: [
+				{
+					question: 'Czy muszę przestrzegać DSA?',
+					answer: 'Tak, jeśli na Twojej stronie pojawiają się treści od odwiedzających—choćby komentarze—musisz przestrzegać DSA. Jeśli strona ma wielu redaktorów, ReportButton pomaga opanować zarządzanie takimi treściami.',
+				},
+				{
+					question: 'Czy będę umiał zainstalować system?',
+					answer: 'Oczywiście. Instalacja to dodanie jednej linijki do kodu strony. Oferujemy też gotowe moduły dla popularnych systemów CMS i sklepowych.',
+				},
+				{
+					question: 'Co się stanie jeśli nie zintegruję ReportButton?',
+					answer: 'Wciąż możesz wdrożyć całe wsparcie do moderacji treści we własnym zakresie, ale ten SaaS zdejmuje całe zadanie z użytkownika i skraca ten proces z tygodni do kilku minut.',
+				},
+				{
+					question: 'Co się stanie gdy nie wdrożę procedur moderacyjnych w ramach DSA?',
+					answer: 'Możesz liczyć na szczęście, że nigdy nic złego nie stanie się na Twojej stronie. Jednak jeśli pojawią się treści łamiące prawo, a odwiedzający nie będą mieli możliwości zgłoszenia tego do właściciela strony, będą mogli zgłosić to bezpośrednio do prokuratury lub organów ścigania. A to oznacza rozpoczęcie formalnych procedur.',
+				},
+				{
+					question: 'Czy DSA nie dotyczy tylko dużych stron jak Facebook, Instagram lub X?',
+					answer: 'DSA powstało z myślą o problemach jakie rodzą te serwisy i ich użytkownicy, ale dotyczy wszystkich stron, sklepów i serwisów w sieci.',
+				},
+			],
 		},
 		footer: {
 			tagline: 'Twój spokój w zarządzaniu zgłoszeniami',
