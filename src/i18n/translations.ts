@@ -6,7 +6,7 @@ export interface Translations {
 	};
 	hero: {
 		title: string;
-		tagline: string;
+		tagline: string[];
 		description: string;
 		emailPlaceholder: string;
 		joinWaitlist: string;
@@ -150,7 +150,10 @@ export const translations: Record<Language, Translations> = {
 		},
 		hero: {
 			title: 'ReportButton',
-			tagline: 'Peace. Order. Professionalism.',
+			tagline: [
+				'Protect your site visitors from illegal content.',
+				'Protect yourself from criminal liability.',
+			],
 			description: 'Professional content moderation system. Keep your site safe, maintain order, and protect your community from harmful content.',
 			emailPlaceholder: 'Your email',
 			joinWaitlist: 'Join the waitlist',
@@ -335,7 +338,10 @@ export const translations: Record<Language, Translations> = {
 		},
 		hero: {
 			title: 'ReportButton',
-			tagline: 'Spokój. Porządek. Profesjonalizm.',
+			tagline: [
+				'Chroń twoją stronę przed nielegalnymi treściami.',
+				'Chroń siebie przed odpowiedzialnością karną.',
+			],
 			description: 'Profesjonalny system moderacji treści. Utrzymaj bezpieczeństwo swojej strony, zachowaj porządek i chroń społeczność przed szkodliwymi treściami.',
 			emailPlaceholder: 'Twój email',
 			joinWaitlist: 'Dołącz do listy oczekujących',
