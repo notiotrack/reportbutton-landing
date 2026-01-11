@@ -263,7 +263,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				security: {
 					title: 'Security',
-					description: 'Spam protection. Data isolation. Professional infrastructure.',
+					description: 'Protection from lawbreakers. Data isolation. Professional infrastructure.',
 				},
 			},
 		},
@@ -451,7 +451,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				security: {
 					title: 'Bezpieczeństwo',
-					description: 'Ochrona przed spamem. Izolacja danych. Profesjonalna infrastruktura.',
+					description: 'Ochrona przed osobami łamiącymi prawo. Izolacja danych. Profesjonalna infrastruktura.',
 				},
 			},
 		},
