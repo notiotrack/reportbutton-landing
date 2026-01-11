@@ -182,7 +182,7 @@ export const translations: Record<Language, Translations> = {
 			title: 'Running a website comes with responsibility',
 			subtitle: "You're responsible for what appears on your site. Unwanted content can surface anywhere—and it's your job to handle it properly.",
 			contentAnywhere: {
-				title: 'Content can appear anywhere',
+				title: 'Illegal content can appear anywhere',
 				items: [
 					'User comments and discussions',
 					'Product reviews and ratings',
@@ -370,7 +370,7 @@ export const translations: Record<Language, Translations> = {
 			title: 'Prowadzenie strony wiąże się z odpowiedzialnością',
 			subtitle: 'Jesteś odpowiedzialny za to, co pojawia się na Twojej stronie. Niepożądane treści mogą pojawić się wszędzie—i Twoim zadaniem jest właściwe nimi zarządzanie.',
 			contentAnywhere: {
-				title: 'Treści mogą pojawić się wszędzie',
+				title: 'Nielegalne treści mogą pojawić się wszędzie',
 				items: [
 					'Komentarze i dyskusje użytkowników',
 					'Recenzje produktów i oceny',
