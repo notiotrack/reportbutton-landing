@@ -277,7 +277,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				addSite: {
 					title: 'Add your site',
-					description: 'Each domain gets its key',
+					description: 'You can configure any number of sites',
 				},
 				pasteCode: {
 					title: 'Paste code',
@@ -465,7 +465,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				addSite: {
 					title: 'Dodaj stronę',
-					description: 'Każda domena ma swój klucz',
+					description: 'Możesz skonfigurować dowolną liczbę witryn',
 				},
 				pasteCode: {
 					title: 'Wklej kod',
