@@ -230,7 +230,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				automated: {
 					title: 'Automated communication',
-					description: 'The system sends confirmations automatically. You just manage.',
+					description: 'The system will remind you about pending reports, so you don\'t miss statutory deadlines for review.',
 				},
 				professional: {
 					title: 'Professional widget',
@@ -421,7 +421,7 @@ export const translations: Record<Language, Translations> = {
 				},
 				automated: {
 					title: 'Automatyzacja komunikacji',
-					description: 'System sam wysyła potwierdzenia. Ty tylko zarządzasz.',
+					description: 'System przypomni Ci o oczekujących zgłoszeniach, tak byś nie przegapił(a) ustawowych terminów na rozpatrzenie',
 				},
 				professional: {
 					title: 'Profesjonalny widget',
