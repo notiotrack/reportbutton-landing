@@ -7,6 +7,7 @@ export interface Translations {
 	hero: {
 		title: string;
 		tagline: string[];
+		workflow: string;
 		description: string;
 		emailPlaceholder: string;
 		joinWaitlist: string;
@@ -22,6 +23,7 @@ export interface Translations {
 	problem: {
 		title: string;
 		subtitle: string;
+		subtitleSecondary: string;
 		contentAnywhere: {
 			title: string;
 			items: string[];
@@ -154,6 +156,7 @@ export const translations: Record<Language, Translations> = {
 				'Protect your site visitors from illegal content.',
 				'Protect yourself from criminal liability.',
 			],
+		workflow: 'Give your users a clear way to report content, and your team a structured workflow to review reports and take action when needed.',
 			description: 'Professional content moderation system. Keep your site safe, maintain order, and protect your site visitors from harmful content.',
 			emailPlaceholder: 'Your email',
 			joinWaitlist: 'Join the waitlist',
@@ -181,6 +184,7 @@ export const translations: Record<Language, Translations> = {
 		problem: {
 			title: 'Running a website comes with responsibility',
 			subtitle: "You're responsible for what appears on your site. Unwanted content can surface anywhere—and it's your job to handle it properly.",
+			subtitleSecondary: 'ReportButton lets visitors report content they believe needs attention, while your team reviews each report and makes the final decision.',
 			contentAnywhere: {
 				title: 'Illegal content can appear anywhere',
 				items: [
@@ -188,6 +192,7 @@ export const translations: Record<Language, Translations> = {
 					'Product reviews and ratings',
 					'Uploaded files and media',
 					'User-generated content',
+					'Content tampering after a site breach',
 					'And countless other ways',
 				],
 			},
@@ -342,6 +347,7 @@ export const translations: Record<Language, Translations> = {
 				'Chroń twoją stronę przed nielegalnymi treściami.',
 				'Chroń siebie przed odpowiedzialnością karną.',
 			],
+		workflow: 'Daj użytkownikom jasny sposób zgłaszania treści, a zespołowi uporządkowany workflow do przeglądu zgłoszeń i działania, gdy to potrzebne.',
 			description: 'Profesjonalny system moderacji treści. Utrzymaj bezpieczeństwo swojej strony, zachowaj porządek i chroń odwiedzających twoją stronę przed szkodliwymi treściami.',
 			emailPlaceholder: 'Twój email',
 			joinWaitlist: 'Dołącz do listy oczekujących',
@@ -369,6 +375,7 @@ export const translations: Record<Language, Translations> = {
 		problem: {
 			title: 'Prowadzenie strony wiąże się z odpowiedzialnością',
 			subtitle: 'Jesteś odpowiedzialny za to, co pojawia się na Twojej stronie. Niepożądane treści mogą pojawić się wszędzie—i Twoim zadaniem jest właściwe nimi zarządzanie.',
+			subtitleSecondary: 'ReportButton pozwala odwiedzającym zgłaszać treści, które ich zdaniem wymagają uwagi, a Twój zespół przegląda każde zgłoszenie i podejmuje ostateczną decyzję.',
 			contentAnywhere: {
 				title: 'Nielegalne treści mogą pojawić się wszędzie',
 				items: [
@@ -376,6 +383,7 @@ export const translations: Record<Language, Translations> = {
 					'Recenzje produktów i oceny',
 					'Przesłane pliki i media',
 					'Treści generowane przez użytkowników',
+					'Podmiana treści wskutek włamania na stronę',
 					'I niezliczone inne sposoby',
 				],
 			},

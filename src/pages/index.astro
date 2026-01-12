@@ -25,18 +25,22 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 
 			<div class="relative z-10 max-w-7xl mx-auto text-center">
 				<!-- Badge -->
-				<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-8 animate-fade-in">
+				<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-6 animate-fade-in">
 					<span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
 					<span class="text-sm text-slate-300" data-i18n="badge.comingSoon">Coming soon</span>
 				</div>
+
+				<p class="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-4 max-w-3xl mx-auto animate-fade-in-up delay-100">
+					<span data-i18n="hero.tagline.0">Protect your site visitors from illegal content.</span><br />
+					<span data-i18n="hero.tagline.1">Protect yourself from criminal liability.</span>
+				</p>
 
 				<h1 class="text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent animate-fade-in-up">
 					ReportButton
 				</h1>
 
-				<p class="text-xl sm:text-2xl lg:text-3xl text-slate-300 mb-4 max-w-3xl mx-auto animate-fade-in-up delay-200">
-					<span data-i18n="hero.tagline.0">Protect your site visitors from illegal content.</span><br />
-					<span data-i18n="hero.tagline.1">Protect yourself from criminal liability.</span>
+				<p class="text-lg sm:text-xl text-slate-300 mb-4 max-w-3xl mx-auto animate-fade-in-up delay-200" data-i18n="hero.workflow">
+					Give your users a clear way to report content, and your team a structured workflow to review reports and take action when needed.
 				</p>
 
 				<!-- Waitlist Form -->
@@ -144,12 +148,15 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 				<div class="text-center mb-16">
 					<h2 class="text-4xl sm:text-5xl font-bold mb-4" data-i18n="problem.title">Running a website comes with responsibility</h2>
 					<p class="text-xl text-slate-300 max-w-3xl mx-auto" data-i18n="problem.subtitle">You're responsible for what appears on your site. Unwanted content can surface anywhere—and it's your job to handle it properly.</p>
+					<p class="text-lg text-slate-400 max-w-3xl mx-auto mt-4" data-i18n="problem.subtitleSecondary">
+						ReportButton lets visitors report content they believe needs attention, while your team reviews each report and makes the final decision.
+					</p>
 				</div>
 
 				<div class="grid md:grid-cols-2 gap-8 mb-12">
 					<div class="p-8 bg-white/5 backdrop-blur-sm border border-white/10">
 						<div class="text-5xl mb-4">🌐</div>
-						<h3 class="text-2xl font-semibold mb-4" data-i18n="problem.contentAnywhere.title">Content can appear anywhere</h3>
+						<h3 class="text-2xl font-semibold mb-4" data-i18n="problem.contentAnywhere.title">Illegal content can appear anywhere</h3>
 						<ul class="space-y-3 text-slate-300">
 							<li class="flex items-start gap-2">
 								<span class="text-blue-400 mt-1">•</span>
@@ -169,7 +176,11 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 							</li>
 							<li class="flex items-start gap-2">
 								<span class="text-blue-400 mt-1">•</span>
-								<span data-i18n="problem.contentAnywhere.items.4">And countless other ways</span>
+								<span data-i18n="problem.contentAnywhere.items.4">Content tampering after a site breach</span>
+							</li>
+							<li class="flex items-start gap-2">
+								<span class="text-blue-400 mt-1">•</span>
+								<span data-i18n="problem.contentAnywhere.items.5">And countless other ways</span>
 							</li>
 						</ul>
 					</div>
