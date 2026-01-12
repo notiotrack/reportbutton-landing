@@ -119,6 +119,14 @@ export interface Translations {
 			};
 		};
 	};
+	howItWorksDetailed: {
+		title: string;
+		steps: string[];
+		benefits: {
+			title: string;
+			items: string[];
+		};
+	};
 	cta: {
 		title: string;
 		subtitle: string;
@@ -273,7 +281,7 @@ export const translations: Record<Language, Translations> = {
 			},
 		},
 		howItWorks: {
-			title: 'How it works?',
+			title: 'Integration in 3 minutes!',
 			subtitle: 'Simple. Fast. No complications.',
 			steps: {
 				createAccount: {
@@ -292,6 +300,25 @@ export const translations: Record<Language, Translations> = {
 					title: 'Enjoy peace of mind',
 					description: 'Manage in a convenient dashboard',
 				},
+			},
+		},
+		howItWorksDetailed: {
+			title: 'How it works?',
+			steps: [
+				'Your site now has an integrated button for reporting illegal content.',
+				'When a visitor sees content that shouldn\'t be there, they click this button',
+				'A window with a content reporting form appears, the reporter specifies what type of violation it is (by selecting one of the options, in accordance with DSA requirements), they can provide their email address if they want to be informed about the outcome of the report',
+				'Immediately after reporting, it goes to the dashboard, and you are notified about it by email',
+				'You verify the report and if it is valid, you remove the problematic content',
+				'If you don\'t do this, we will remind you about the legal necessity to respond, you won\'t miss any deadline',
+				'After completing the moderation process, an automatic report will be prepared confirming your fulfillment of legal obligations',
+			],
+			benefits: {
+				title: 'What do you gain?',
+				items: [
+					'Without the option to report to the site owner, visitors will report it to state authorities, which will start legal procedures and investigation. DSA requires having internal procedures to handle such reports, and meanwhile the supervisory authorities have just learned that you don\'t have any - this can mean financial liability',
+					'Even if a visitor reports it to the prosecutor, you are covered: you have verified the report, responded, and have a prepared report. The requirements have been met.',
+				],
 			},
 		},
 		cta: {
@@ -464,7 +491,7 @@ export const translations: Record<Language, Translations> = {
 			},
 		},
 		howItWorks: {
-			title: 'Jak to działa?',
+			title: 'Integracja w 3 minuty!',
 			subtitle: 'Prosto. Szybko. Bez komplikacji.',
 			steps: {
 				createAccount: {
@@ -483,6 +510,25 @@ export const translations: Record<Language, Translations> = {
 					title: 'Ciesz się spokojem',
 					description: 'Zarządzaj w wygodnym panelu',
 				},
+			},
+		},
+		howItWorksDetailed: {
+			title: 'Jak to działa?',
+			steps: [
+				'Twoja strona ma od teraz zintegrowany przycisk do zgłaszania nielegalnych treści.',
+				'Gdy jakiś odwiedzający widzi treść, która nie powinna tam być, klika ten przycisk',
+				'Wyświetla mu się okienko z formularzem zgłaszania treści, zgłaszający określa jaki to jest rodzaj naruszenia (wybierając jedną z opcji, zgodnie z założeniami DSA), może podać swój adres email, jeśli chce być poinformowany o wyniku zgłoszenia',
+				'Od razu po zgłoszeniu, trafia ono do panelu, a Ty jesteś powiadamiany o tym emailem',
+				'Weryfikujesz zgłoszenie i jeśli jest ono słuszne, usuwasz problematyczną treść',
+				'Jeśli tego nie zrobisz, będziemy ci przypominać o prawnej konieczności zareagowania, nie przegapisz żadnego terminu',
+				'Po zakończeniu procesu moderacji przygotowany zostanie automatyczny raport potwierdzający Twoje wywiązanie się z prawnych obowiązków',
+			],
+			benefits: {
+				title: 'Co zyskujesz?',
+				items: [
+					'Bez opcji zgłoszenia do właściciela strony, odwiedzający zgłosi to do organów państwowych, co rozpocznie prawne procedury i dochodzenie. DSA wymaga posiadanie procedur wewnętrznych do obsługi takich zgłoszeń, a tymczasem władze kontrolne właśnie się dowiedziały, że nic takiego nie masz - to może oznaczać odpowiedzialność finansową',
+					'Nawet jeśli odwiedzający zgłosi to do prokuratury, jesteś kryty: przeprowadziłeś weryfikację zgłoszenia, zareagowałeś i masz przygotowany raport. Wymogi zostały spełnione.',
+				],
 			},
 		},
 		cta: {
