@@ -152,6 +152,11 @@ export interface Translations {
 		tagline: string;
 		copyright: string;
 	};
+	cookieConsent: {
+		message: string;
+		accept: string;
+		reject: string;
+	};
 }
 
 export const translations: Record<Language, Translations> = {
@@ -365,6 +370,11 @@ export const translations: Record<Language, Translations> = {
 			tagline: 'Your peace of mind in managing reports',
 			copyright: '© 2026 NotifyButton. All rights reserved.',
 		},
+		cookieConsent: {
+			message: 'We use cookies to understand how visitors use the site. You can accept or reject.',
+			accept: 'Accept',
+			reject: 'Reject',
+		},
 	},
 	pl: {
 		badge: {
@@ -575,6 +585,11 @@ export const translations: Record<Language, Translations> = {
 		footer: {
 			tagline: 'Twój spokój w zarządzaniu zgłoszeniami',
 			copyright: '© 2026 NotifyButton. Wszystkie prawa zastrzeżone.',
+		},
+		cookieConsent: {
+			message: 'Używamy plików cookie aby zrozumieć, jak odwiedzający korzystają ze strony. Możesz zaakceptować lub odrzucić.',
+			accept: 'Akceptuję',
+			reject: 'Odrzuć',
 		},
 	},
 };

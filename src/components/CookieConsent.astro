@@ -1,0 +1,174 @@
+---
+interface Props {
+	/** Google Analytics measurement ID – loaded only after user accepts cookies */
+	measurementId: string;
+}
+
+const { measurementId } = Astro.props;
+---
+
+<div
+	id="cookie-consent-banner"
+	class="cookie-consent-banner"
+	role="dialog"
+	aria-label="Cookie consent"
+	data-measurement-id={measurementId}
+	hidden
+>
+	<div class="cookie-consent-inner">
+		<p class="cookie-consent-message" data-i18n="cookieConsent.message">
+			We use cookies for analytics (Google Analytics) to understand how visitors use the site. You can accept or reject.
+		</p>
+		<div class="cookie-consent-actions">
+			<button type="button" class="cookie-consent-reject" data-i18n="cookieConsent.reject">
+				Reject
+			</button>
+			<button type="button" class="cookie-consent-accept" data-i18n="cookieConsent.accept">
+				Accept
+			</button>
+		</div>
+	</div>
+</div>
+
+<style>
+	.cookie-consent-banner {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 9999;
+		background: linear-gradient(to top, rgb(15 23 42), rgb(30 41 59));
+		color: rgb(248 250 252);
+		box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+		padding: 1rem 1.5rem;
+	}
+
+	.cookie-consent-banner[hidden] {
+		display: none !important;
+	}
+
+	.cookie-consent-inner {
+		max-width: 64rem;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem;
+		justify-content: space-between;
+	}
+
+	.cookie-consent-message {
+		flex: 1;
+		min-width: 200px;
+		margin: 0;
+		font-size: 0.875rem;
+		line-height: 1.4;
+		color: rgb(203 213 225);
+	}
+
+	.cookie-consent-actions {
+		display: flex;
+		gap: 0.75rem;
+		flex-shrink: 0;
+	}
+
+	.cookie-consent-reject,
+	.cookie-consent-accept {
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		border-radius: 0.375rem;
+		cursor: pointer;
+		transition: background-color 0.15s, color 0.15s;
+	}
+
+	.cookie-consent-reject {
+		background: transparent;
+		border: 1px solid rgb(100 116 139);
+		color: rgb(203 213 225);
+	}
+
+	.cookie-consent-reject:hover {
+		background: rgb(51 65 85);
+		color: rgb(248 250 252);
+	}
+
+	.cookie-consent-accept {
+		background: linear-gradient(to right, rgb(37 99 235), rgb(147 51 234));
+		border: none;
+		color: white;
+	}
+
+	.cookie-consent-accept:hover {
+		background: linear-gradient(to right, rgb(29 78 216), rgb(126 34 206));
+	}
+</style>
+
+<script define:vars={{ measurementId }}>
+	const STORAGE_KEY = 'cookie-consent';
+	const banner = document.getElementById('cookie-consent-banner');
+
+	function loadGoogleAnalytics() {
+		if (window.gtag) return;
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			window.dataLayer.push(arguments);
+		}
+		window.gtag = gtag;
+		gtag('js', new Date());
+		gtag('config', measurementId);
+
+		const script = document.createElement('script');
+		script.async = true;
+		script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+		document.head.appendChild(script);
+	}
+
+	function hideBanner() {
+		if (banner) banner.hidden = true;
+	}
+
+	function accept() {
+		try {
+			localStorage.setItem(STORAGE_KEY, 'accepted');
+		} catch (_) {}
+		loadGoogleAnalytics();
+		hideBanner();
+	}
+
+	function reject() {
+		try {
+			localStorage.setItem(STORAGE_KEY, 'rejected');
+		} catch (_) {}
+		hideBanner();
+	}
+
+	// Show banner only if consent not yet given
+	function init() {
+		let consent = '';
+		try {
+			consent = localStorage.getItem(STORAGE_KEY) || '';
+		} catch (_) {}
+
+		if (consent === 'accepted') {
+			loadGoogleAnalytics();
+			hideBanner();
+			return;
+		}
+		if (consent === 'rejected') {
+			hideBanner();
+			return;
+		}
+
+		banner.hidden = false;
+
+		banner.querySelector('.cookie-consent-accept')?.addEventListener('click', accept);
+		banner.querySelector('.cookie-consent-reject')?.addEventListener('click', reject);
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', init);
+	} else {
+		init();
+	}
+</script>
