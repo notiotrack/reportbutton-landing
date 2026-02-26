@@ -5,7 +5,7 @@ if (typeof window !== 'undefined') {
 	(window as any).translations = translations;
 }
 
-const STORAGE_KEY = 'reportbutton-lang';
+const STORAGE_KEY = 'notifybutton-lang';
 
 export function getLanguage(): Language {
 	if (typeof window === 'undefined') return 'en';

@@ -39,7 +39,7 @@ export interface Translations {
 				title: string;
 				description: string;
 			};
-			withReportButton: {
+			withNotifyButton: {
 				title: string;
 				description: string;
 			};
@@ -159,7 +159,7 @@ export const translations: Record<Language, Translations> = {
 			comingSoon: 'Coming soon',
 		},
 		hero: {
-			title: 'ReportButton',
+			title: 'NotifyButton',
 			tagline: [
 				'Protect your site visitors from illegal content.',
 				'Protect yourself from criminal liability.',
@@ -192,7 +192,7 @@ export const translations: Record<Language, Translations> = {
 		problem: {
 			title: 'Running a website comes with responsibility',
 			subtitle: "You're responsible for what appears on your site. Unwanted content can surface anywhere—and it's your job to handle it properly.",
-			subtitleSecondary: 'ReportButton lets visitors report content they believe needs attention, while your team reviews each report and makes the final decision.',
+			subtitleSecondary: 'NotifyButton lets visitors report content they believe needs attention, while your team reviews each report and makes the final decision.',
 			contentAnywhere: {
 				title: 'Illegal content can appear anywhere',
 				items: [
@@ -222,14 +222,14 @@ export const translations: Record<Language, Translations> = {
 					title: 'Without proper procedures',
 					description: "If you don't have a reporting system in place, reports may come through official channels—from prosecutors, law enforcement, or regulatory bodies across EU member states. This means formal investigations, legal complications, and unnecessary stress.",
 				},
-				withReportButton: {
-					title: 'With ReportButton',
+				withNotifyButton: {
+					title: 'With NotifyButton',
 					description: 'Set up a professional reporting system in minutes. Visitors can report issues directly to you, you maintain full control, and everything stays organized. No more complications—just peace of mind.',
 				},
 			},
 		},
 		solution: {
-			title: 'ReportButton is your peace of mind',
+			title: 'NotifyButton is your peace of mind',
 			subtitle: 'Everything in one place. Zero chaos. Full control.',
 			features: {
 				oneDashboard: {
@@ -331,7 +331,7 @@ export const translations: Record<Language, Translations> = {
 		integration: {
 			title: 'Works with any platform',
 			subtitle: 'Universal integration',
-			description: 'ReportButton works with any CMS or website platform. Just paste one script and you are done.',
+			description: 'NotifyButton works with any CMS or website platform. Just paste one script and you are done.',
 			cmsList: ['WordPress', 'Shopify', 'Webflow', 'Custom HTML', 'Any CMS'],
 		},
 		faq: {
@@ -339,14 +339,14 @@ export const translations: Record<Language, Translations> = {
 			items: [
 				{
 					question: 'Do I need to comply with DSA?',
-					answer: 'Yes, if user-generated content appears on your site—even just comments—you need to comply with DSA. If your site has multiple editors, ReportButton helps you manage content moderation efficiently.',
+					answer: 'Yes, if user-generated content appears on your site—even just comments—you need to comply with DSA. If your site has multiple editors, NotifyButton helps you manage content moderation efficiently.',
 				},
 				{
 					question: 'Will I be able to install the system?',
 					answer: 'Absolutely. Installation is as simple as adding one line of code to your website. We also provide ready-made modules for popular CMS and e-commerce platforms.',
 				},
 				{
-					question: 'What happens if I do not integrate ReportButton?',
+					question: 'What happens if I do not integrate NotifyButton?',
 					answer: 'You can still implement full content moderation support on your own, but this SaaS solution takes the entire task off your shoulders and shortens the process from weeks to just a few minutes.',
 				},
 				{
@@ -361,7 +361,7 @@ export const translations: Record<Language, Translations> = {
 		},
 		footer: {
 			tagline: 'Your peace of mind in managing reports',
-			copyright: '© 2026 ReportButton. All rights reserved.',
+			copyright: '© 2026 NotifyButton. All rights reserved.',
 		},
 	},
 	pl: {
@@ -369,7 +369,7 @@ export const translations: Record<Language, Translations> = {
 			comingSoon: 'Wkrótce dostępne',
 		},
 		hero: {
-			title: 'ReportButton',
+			title: 'NotifyButton',
 			tagline: [
 				'Chroń twoją stronę przed nielegalnymi treściami.',
 				'Chroń siebie przed odpowiedzialnością karną.',
@@ -402,7 +402,7 @@ export const translations: Record<Language, Translations> = {
 		problem: {
 			title: 'Prowadzenie strony wiąże się z odpowiedzialnością',
 			subtitle: 'Jesteś odpowiedzialny za to, co pojawia się na Twojej stronie. Niepożądane treści mogą pojawić się wszędzie—i Twoim zadaniem jest właściwe nimi zarządzanie.',
-			subtitleSecondary: 'ReportButton pozwala odwiedzającym zgłaszać treści, które ich zdaniem wymagają uwagi, a Twój zespół przegląda każde zgłoszenie i podejmuje ostateczną decyzję.',
+			subtitleSecondary: 'NotifyButton pozwala odwiedzającym zgłaszać treści, które ich zdaniem wymagają uwagi, a Twój zespół przegląda każde zgłoszenie i podejmuje ostateczną decyzję.',
 			contentAnywhere: {
 				title: 'Nielegalne treści mogą pojawić się wszędzie',
 				items: [
@@ -432,14 +432,14 @@ export const translations: Record<Language, Translations> = {
 					title: 'Bez odpowiednich procedur',
 					description: 'Jeśli nie masz systemu zgłaszania, zgłoszenia mogą przychodzić przez oficjalne kanały—od prokuratury, organów ścigania lub organów regulacyjnych w państwach członkowskich UE. To oznacza formalne dochodzenia, komplikacje prawne i niepotrzebny stres.',
 				},
-				withReportButton: {
-					title: 'Z ReportButton',
+				withNotifyButton: {
+					title: 'Z NotifyButton',
 					description: 'Skonfiguruj profesjonalny system zgłaszania w kilka minut. Odwiedzający mogą zgłaszać problemy bezpośrednio do Ciebie, masz pełną kontrolę, a wszystko pozostaje uporządkowane. Koniec z komplikacjami—tylko spokój ducha.',
 				},
 			},
 		},
 		solution: {
-			title: 'ReportButton to Twój spokój',
+			title: 'NotifyButton to Twój spokój',
 			subtitle: 'Wszystko w jednym miejscu. Zero chaosu. Pełna kontrola.',
 			features: {
 				oneDashboard: {
@@ -541,7 +541,7 @@ export const translations: Record<Language, Translations> = {
 		integration: {
 			title: 'Działa z każdą platformą',
 			subtitle: 'Uniwersalna integracja',
-			description: 'ReportButton działa z każdym CMS-em lub platformą. Wystarczy wkleić jeden skrypt i gotowe.',
+			description: 'NotifyButton działa z każdym CMS-em lub platformą. Wystarczy wkleić jeden skrypt i gotowe.',
 			cmsList: ['WordPress', 'Shopify', 'Webflow', 'Własny HTML', 'Dowolny CMS'],
 		},
 		faq: {
@@ -549,14 +549,14 @@ export const translations: Record<Language, Translations> = {
 			items: [
 				{
 					question: 'Czy muszę przestrzegać DSA?',
-					answer: 'Tak, jeśli na Twojej stronie pojawiają się treści od odwiedzających—choćby komentarze—musisz przestrzegać DSA. Jeśli strona ma wielu redaktorów, ReportButton pomaga opanować zarządzanie takimi treściami.',
+					answer: 'Tak, jeśli na Twojej stronie pojawiają się treści od odwiedzających—choćby komentarze—musisz przestrzegać DSA. Jeśli strona ma wielu redaktorów, NotifyButton pomaga opanować zarządzanie takimi treściami.',
 				},
 				{
 					question: 'Czy będę umiał zainstalować system?',
 					answer: 'Oczywiście. Instalacja to dodanie jednej linijki do kodu strony. Oferujemy też gotowe moduły dla popularnych systemów CMS i sklepowych.',
 				},
 				{
-					question: 'Co się stanie jeśli nie zintegruję ReportButton?',
+					question: 'Co się stanie jeśli nie zintegruję NotifyButton?',
 					answer: 'Wciąż możesz wdrożyć całe wsparcie do moderacji treści we własnym zakresie, ale ten SaaS zdejmuje całe zadanie z użytkownika i skraca ten proces z tygodni do kilku minut.',
 				},
 				{
@@ -571,7 +571,7 @@ export const translations: Record<Language, Translations> = {
 		},
 		footer: {
 			tagline: 'Twój spokój w zarządzaniu zgłoszeniami',
-			copyright: '© 2026 ReportButton. Wszystkie prawa zastrzeżone.',
+			copyright: '© 2026 NotifyButton. Wszystkie prawa zastrzeżone.',
 		},
 	},
 };
