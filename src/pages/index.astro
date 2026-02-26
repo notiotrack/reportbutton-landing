@@ -734,10 +734,10 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 		});
 	}
 
-	// MailerLite: submit via JSONP so we don't redirect; show success only for the submitted form
+	// MailerLite: submit via fetch POST so we stay on page and can show success
 	let lastSubmittedWaitlistForm = null;
 
-	window.ml_webform_success_37691106 = function () {
+	function showWaitlistSuccess() {
 		const wrapper = lastSubmittedWaitlistForm;
 		if (wrapper) {
 			const rowForm = wrapper.querySelector('.row-form');
@@ -746,9 +746,9 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 			if (rowSuccess) rowSuccess.classList.remove('hidden');
 		}
 		lastSubmittedWaitlistForm = null;
-	};
+	}
 
-	document.addEventListener('submit', (e) => {
+	document.addEventListener('submit', async (e) => {
 		const form = e.target;
 		if (!form || !form.classList || !form.classList.contains('ml-block-form')) return;
 
@@ -761,20 +761,50 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 		const wrapper = form.closest('[data-waitlist-form]');
 		if (wrapper) lastSubmittedWaitlistForm = wrapper;
 
-		const base = 'https://assets.mailerlite.com/jsonp/2144205/forms/180453686900687913/subscribe';
-		const params = new URLSearchParams({
+		const submitUrl = 'https://assets.mailerlite.com/jsonp/2144205/forms/180453686900687913/subscribe';
+		const body = new URLSearchParams({
 			'fields[email]': email,
 			'ml-submit': '1',
 			anticsrf: 'true',
 		});
-		const script = document.createElement('script');
-		script.src = base + '?callback=ml_webform_success_37691106&' + params.toString();
-		script.async = true;
-		script.onload = () => script.remove();
-		script.onerror = () => { lastSubmittedWaitlistForm = null; script.remove(); };
-		document.body.appendChild(script);
+
+		const btn = form.querySelector('button[type="submit"]');
+		const btnText = btn && btn.textContent;
+		if (btn) { btn.disabled = true; if (btnText) btn.textContent = '…'; }
+
+		try {
+			const res = await fetch(submitUrl, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+				body: body.toString(),
+				mode: 'cors',
+			});
+			const data = await res.json().catch(() => ({}));
+			if (data && data.success !== false) {
+				showWaitlistSuccess();
+			} else {
+				lastSubmittedWaitlistForm = null;
+				if (btn) { btn.disabled = false; if (btnText) btn.textContent = btnText; }
+				alert(data?.errors?.fields?.email?.[0] || 'Something went wrong. Please try again.');
+			}
+		} catch (err) {
+			// CORS or network: fallback to form POST in hidden iframe (no redirect)
+			if (btn) { btn.disabled = false; if (btnText) btn.textContent = btnText; }
+			let iframe = document.getElementById('ml-submit-iframe');
+			if (!iframe) {
+				iframe = document.createElement('iframe');
+				iframe.id = 'ml-submit-iframe';
+				iframe.name = 'ml-submit-iframe';
+				iframe.style.cssText = 'position:absolute;width:0;height:0;border:0;visibility:hidden';
+				document.body.appendChild(iframe);
+			}
+			form.setAttribute('target', 'ml-submit-iframe');
+			form.submit();
+			setTimeout(() => {
+				form.removeAttribute('target');
+				lastSubmittedWaitlistForm = wrapper;
+				showWaitlistSuccess();
+			}, 1500);
+		}
 	}, true);
-</script>
-<script is:inline>
-	fetch("https://assets.mailerlite.com/jsonp/2144205/forms/180453686900687913/takel").catch(() => {});
 </script>
