@@ -1,0 +1,67 @@
+---
+interface Props {
+	/** 'hero' = dark/glass input + subtext; 'cta' = white input, no subtext */
+	variant: 'hero' | 'cta';
+	/** Unique id for this form instance (e.g. 'hero', 'cta-1', 'cta-2') */
+	formId: string;
+}
+
+const { variant, formId } = Astro.props;
+
+const isHero = variant === 'hero';
+
+const wrapperClass = isHero
+	? 'max-w-md mx-auto animate-fade-in-up delay-300 py-12 ml-subscribe-form-37691106'
+	: 'max-w-md mx-auto ml-subscribe-form-37691106';
+
+const inputClass = isHero
+	? 'flex-1 px-6 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all'
+	: 'flex-1 px-6 py-4 bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-lg';
+
+const placeholderI18n = isHero ? 'hero.emailPlaceholder' : 'cta.emailPlaceholder';
+const buttonI18n = isHero ? 'hero.joinWaitlist' : 'cta.joinWaitlist';
+
+const successClass = isHero ? 'text-green-400' : 'text-green-600';
+---
+
+<div class={wrapperClass} data-waitlist-form={formId}>
+	<div class="row-form">
+		<form
+			class="ml-block-form flex flex-col sm:flex-row gap-3"
+			action="https://assets.mailerlite.com/jsonp/2144205/forms/180453686900687913/subscribe"
+			method="post"
+			target="_blank"
+			data-code=""
+		>
+			<input type="hidden" name="ml-submit" value="1" />
+			<input type="hidden" name="anticsrf" value="true" />
+			<input
+				type="email"
+				name="fields[email]"
+				required
+				aria-label="email"
+				data-i18n-placeholder={placeholderI18n}
+				placeholder="Your email"
+				autocomplete="email"
+				class={inputClass}
+			/>
+			<button
+				type="submit"
+				class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer"
+				data-i18n={buttonI18n}
+			>
+				Join the waitlist
+			</button>
+		</form>
+		{isHero && (
+			<p class="text-sm text-slate-500 mt-4" data-i18n="hero.waitlistSubtext">
+				Be the first to know when we're ready
+			</p>
+		)}
+	</div>
+	<div class="row-success hidden" data-waitlist-success>
+		<p class={`font-medium ${successClass}`} data-i18n="hero.waitlistSuccess">
+			Thanks! Check your email to confirm.
+		</p>
+	</div>
+</div>

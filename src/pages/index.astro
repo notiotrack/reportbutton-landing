@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
+import WaitlistForm from '../components/WaitlistForm.astro';
 import '../styles/global.css';
 import '../i18n/i18n';
 
@@ -43,25 +44,8 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 					Give your users a clear way to report content, and your team a structured workflow to review reports and take action when needed.
 				</p>
 
-				<!-- Waitlist Form -->
-				<div class="max-w-md mx-auto animate-fade-in-up delay-300 py-12">
-					<form class="flex flex-col sm:flex-row gap-3">
-						<input
-							type="email"
-							data-i18n-placeholder="hero.emailPlaceholder"
-							placeholder="Your email"
-							class="flex-1 px-6 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-						/>
-						<button
-							type="submit"
-							class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer"
-							data-i18n="hero.joinWaitlist"
-						>
-							Join the waitlist
-						</button>
-					</form>
-					<p class="text-sm text-slate-500 mt-4" data-i18n="hero.waitlistSubtext">Be the first to know when we're ready</p>
-				</div>
+				<!-- Waitlist Form (MailerLite) -->
+				<WaitlistForm variant="hero" formId="hero" />
 
 				<p class="text-lg sm:text-xl text-slate-400 mb-12 max-w-2xl mx-auto animate-fade-in-up delay-400" data-i18n="hero.description">
 					Simple tool for managing content reports. Take the email chaos off your mind and focus on what matters.
@@ -380,23 +364,7 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 					Sign up now to get 50% off for the first 6 months after launch
 				</p>
 
-				<div class="max-w-md mx-auto">
-					<form class="flex flex-col sm:flex-row gap-3">
-						<input
-							type="email"
-							data-i18n-placeholder="cta.emailPlaceholder"
-							placeholder="Your email"
-							class="flex-1 px-6 py-4 bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-lg"
-						/>
-						<button
-							type="submit"
-							class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer"
-							data-i18n="cta.joinWaitlist"
-						>
-							Join the waitlist
-						</button>
-					</form>
-				</div>
+				<WaitlistForm variant="cta" formId="cta-1" />
 			</div>
 		</section>
 
@@ -619,23 +587,7 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 					Sign up now to get 50% off for the first 6 months after launch
 				</p>
 
-				<div class="max-w-md mx-auto">
-					<form class="flex flex-col sm:flex-row gap-3">
-						<input
-							type="email"
-							data-i18n-placeholder="cta.emailPlaceholder"
-							placeholder="Your email"
-							class="flex-1 px-6 py-4 bg-white border-2 border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-lg"
-						/>
-						<button
-							type="submit"
-							class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all transform hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer"
-							data-i18n="cta.joinWaitlist"
-						>
-							Join the waitlist
-						</button>
-					</form>
-				</div>
+				<WaitlistForm variant="cta" formId="cta-2" />
 			</div>
 		</section>
 
@@ -781,4 +733,48 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 			updateMousePosition(e);
 		});
 	}
+
+	// MailerLite: submit via JSONP so we don't redirect; show success only for the submitted form
+	let lastSubmittedWaitlistForm = null;
+
+	window.ml_webform_success_37691106 = function () {
+		const wrapper = lastSubmittedWaitlistForm;
+		if (wrapper) {
+			const rowForm = wrapper.querySelector('.row-form');
+			const rowSuccess = wrapper.querySelector('.row-success');
+			if (rowForm) rowForm.classList.add('hidden');
+			if (rowSuccess) rowSuccess.classList.remove('hidden');
+		}
+		lastSubmittedWaitlistForm = null;
+	};
+
+	document.addEventListener('submit', (e) => {
+		const form = e.target;
+		if (!form || !form.classList || !form.classList.contains('ml-block-form')) return;
+
+		e.preventDefault();
+
+		const emailInput = form.querySelector('input[name="fields[email]"]');
+		const email = emailInput && emailInput.value ? emailInput.value.trim() : '';
+		if (!email) return;
+
+		const wrapper = form.closest('[data-waitlist-form]');
+		if (wrapper) lastSubmittedWaitlistForm = wrapper;
+
+		const base = 'https://assets.mailerlite.com/jsonp/2144205/forms/180453686900687913/subscribe';
+		const params = new URLSearchParams({
+			'fields[email]': email,
+			'ml-submit': '1',
+			anticsrf: 'true',
+		});
+		const script = document.createElement('script');
+		script.src = base + '?callback=ml_webform_success_37691106&' + params.toString();
+		script.async = true;
+		script.onload = () => script.remove();
+		script.onerror = () => { lastSubmittedWaitlistForm = null; script.remove(); };
+		document.body.appendChild(script);
+	}, true);
+</script>
+<script is:inline>
+	fetch("https://assets.mailerlite.com/jsonp/2144205/forms/180453686900687913/takel").catch(() => {});
 </script>

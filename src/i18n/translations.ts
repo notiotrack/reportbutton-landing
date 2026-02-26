@@ -12,6 +12,7 @@ export interface Translations {
 		emailPlaceholder: string;
 		joinWaitlist: string;
 		waitlistSubtext: string;
+		waitlistSuccess: string;
 	};
 	quotes: {
 		items: {
@@ -169,6 +170,7 @@ export const translations: Record<Language, Translations> = {
 			emailPlaceholder: 'Your email',
 			joinWaitlist: 'Join the waitlist',
 			waitlistSubtext: "Be the first to know when we're ready",
+			waitlistSuccess: 'Thanks! Check your email to confirm.',
 		},
 		quotes: {
 			items: [
@@ -379,6 +381,7 @@ export const translations: Record<Language, Translations> = {
 			emailPlaceholder: 'Twój email',
 			joinWaitlist: 'Dołącz do listy oczekujących',
 			waitlistSubtext: 'Bądź pierwszy, gdy będziemy gotowi',
+			waitlistSuccess: 'Dziękujemy! Sprawdź email i potwierdź zapis.',
 		},
 		quotes: {
 			items: [
