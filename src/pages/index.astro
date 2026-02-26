@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LanguageSwitcher from '../components/LanguageSwitcher.astro';
 import WaitlistForm from '../components/WaitlistForm.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import '../styles/global.css';
 import '../i18n/i18n';
 
@@ -598,6 +599,7 @@ const screenshotUrl = `${baseUrl}screenshot.webp`;
 				<p class="text-slate-600 mb-6" data-i18n="footer.tagline">Your peace of mind in managing reports</p>
 				<p class="text-sm text-slate-400" data-i18n="footer.copyright">© 2026 NotifyButton. All rights reserved.</p>
 			</div>
+			<GoogleAnalytics measurementId="G-EX72ZSTFNR" />
 		</footer>
 	</main>
 </Layout>
