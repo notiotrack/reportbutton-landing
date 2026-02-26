@@ -31,10 +31,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # For custom domain (e.g. notifybutton.com): set repository variable BASE_PATH=/ in Settings → Actions → Variables
       - name: Set base path
         id: base_path
         run: |
-          if [[ "${{ github.repository }}" == *".github.io" ]]; then
+          if [[ -n "${{ vars.BASE_PATH }}" ]]; then
+            echo "base_path=${{ vars.BASE_PATH }}" >> $GITHUB_OUTPUT
+          elif [[ "${{ github.repository }}" == *".github.io" ]]; then
             echo "base_path=/" >> $GITHUB_OUTPUT
           else
             echo "base_path=/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT

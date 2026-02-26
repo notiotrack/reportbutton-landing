@@ -38,6 +38,16 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Deploy (GitHub Pages + custom domain)
+
+When the site is served from a **custom domain** (e.g. `notifybutton.com`), set the repository variable so assets load from the root:
+
+1. Repo **Settings** → **Secrets and variables** → **Actions** → **Variables**
+2. New variable: name `BASE_PATH`, value `/`
+3. Re-run the deploy workflow (or push to `main`)
+
+Without this, the build uses `/<repo-name>/` as base and assets would 404 on the custom domain.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
