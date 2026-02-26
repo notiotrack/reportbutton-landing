@@ -371,7 +371,7 @@ export const translations: Record<Language, Translations> = {
 			copyright: '© 2026 NotifyButton. All rights reserved.',
 		},
 		cookieConsent: {
-			message: 'We use cookies to understand how visitors use the site. You can accept or reject.',
+			message: 'We use cookies to understand how visitors use the site.',
 			accept: 'Accept',
 			reject: 'Reject',
 		},
@@ -587,7 +587,7 @@ export const translations: Record<Language, Translations> = {
 			copyright: '© 2026 NotifyButton. Wszystkie prawa zastrzeżone.',
 		},
 		cookieConsent: {
-			message: 'Używamy plików cookie aby zrozumieć, jak odwiedzający korzystają ze strony. Możesz zaakceptować lub odrzucić.',
+			message: 'Używamy plików cookie aby zrozumieć, jak odwiedzający korzystają ze strony.',
 			accept: 'Akceptuję',
 			reject: 'Odrzuć',
 		},
